@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
+  # before_action :authenticate_user, :current_customer, :current_shopping_cart
 
   def current_user
     auth_headers = request.headers["Authorization"]
@@ -18,6 +19,20 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  def current_shopping_cart
+    if login?
+      @cart = @user.shopping_cart
+    else
+      @cart = Cart.create
+      session[:cart] = @cart.id
+    end
+  end
+
+  def login?
+    !!current_user
+  end
+
 
   helper_method :current_user
 
