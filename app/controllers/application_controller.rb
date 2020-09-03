@@ -20,19 +20,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_shopping_cart
-    if login?
-      @cart = @user.shopping_cart
-    else
-      @cart = Cart.create
-      session[:cart] = @cart.id
-    end
-  end
-
-  def login?
-    !!current_user
-  end
-
 
   helper_method :current_user
 
