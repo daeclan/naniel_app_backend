@@ -6,10 +6,14 @@ def index
 end
 
 def create
+ 
   carted_products = current_user.carted_products.where(carted_status: "carted")
+  p "*" * 88
+  p carted_products
+  p "*" * 88
   calculated_subtotal = 0
   carted_products.each do |carted_product|
-     calculated_subtotal += carted_product.qty * carted_product.product.price
+    calculated_subtotal += carted_product.qty * carted_product.product.price || 0
   end
 
   tax_rate = 0.09
@@ -33,6 +37,17 @@ end
 
 def show
   @order = Order.find_by(id: params[:id])
+  @carted_products = current_user.carted_products.where(carted_status: "carted").map do |carted_product| {
+    id: carted_product.id,    
+    name: carted_product.name,
+    price: carted_product.price,
+    image_url: carted_product.image_url,
+    user_id: carted_product.user_id,
+    cause_id: carted_product.cause_id,
+    description: carted_product.description,
+  }
+  end
   render 'show.json.jb'
 end
 end
+

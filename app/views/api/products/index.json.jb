@@ -6,6 +6,7 @@
   description: product.description,
   image_url: product.image_url,
   user_id: product.user_id,
+  qty: product.qty,
   cause_id: product.cause_id,
   }
 end

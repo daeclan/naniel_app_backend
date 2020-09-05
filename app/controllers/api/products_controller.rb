@@ -14,6 +14,7 @@ class Api::ProductsController < ApplicationController
       image_url: params[:image_url],
       user_id: current_user.id,
       cause_id: params[:cause_id],
+      qty: params[:qty],
       active_status: params[:active_status]
     )
     if @product.save
@@ -35,6 +36,7 @@ class Api::ProductsController < ApplicationController
     @product.price = params[:price] || @product.price
     @product.image_url = params[:image_url] || @product.image_url
     @product.cause_id = params[:cause_id] || @product.cause_id
+    @product.qty = params[:qty] || @product.qty
     @product.user_id = @product.user_id || 1
     if @product.save
       render "show.json.jbuilder"

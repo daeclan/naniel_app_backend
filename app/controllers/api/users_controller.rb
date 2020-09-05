@@ -1,8 +1,20 @@
 class Api::UsersController < ApplicationController
+
+  def index
+    @users = User.all
+    render 'index.json.jb'
+  end
+
+  def show
+    @user = User.find_by(id: params[:id])
+    render "show.json.jbuilder"
+  end
+
   def create
     user = User.new(
       user_name: params[:user_name],
       email: params[:email],
+      about_me: params[:about_me],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
     )
