@@ -3,6 +3,7 @@ class Api::CartedProductsController < ApplicationController
 
   def index
     @carted_products = current_user.carted_products.where(carted_status: "carted")
+    p @carted_products
     render 'index.json.jb'
   end
 
@@ -23,13 +24,10 @@ class Api::CartedProductsController < ApplicationController
   end
 
   def destroy
+    p params
     @carted_product = CartedProduct.find_by(id: params[:id])
-    p "*" * 88
-    p @carted_product
-    p "*" * 88
-    @carted_product.carted_status = "removed"
-    @carted_product.destroy
-    render json: {message: "you have removed the item from your shopping cart"}
+    @carted_product.update(carted_status: "removed")
+    render json: {message: "Carted product successfully removed"}
   end 
 
 end

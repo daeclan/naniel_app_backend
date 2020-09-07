@@ -5,5 +5,7 @@
     product_id: carted_product.product_id,
     qty: carted_product.qty,
     carted_status: carted_product.carted_status,
+    product: carted_product.product,
+    order: carted_product.order
   }
 end

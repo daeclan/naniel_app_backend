@@ -1,0 +1,10 @@
+@causes.map do |cause|
+  {
+    id: cause.id, 
+    name: cause.name,
+    goal: cause.goal,
+    description: cause.description,
+    status: cause.status,
+    progress: cause.progress,
+  }
+end

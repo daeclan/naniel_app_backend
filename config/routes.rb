@@ -10,8 +10,11 @@ Rails.application.routes.draw do
     post "/users" => "users#create"
 
     post "/sessions" => "sessions#create"
-   
 
+    get "/causes" => "causes#index"
+    post "/causes" => "causes#create"
+    get "/causes/:id" => "causes#show"
+    
     get "/products" => "products#index"
     # get "/products/new" => "products#new"
     post "/products" => "products#create"

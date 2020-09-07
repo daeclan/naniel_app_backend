@@ -16,6 +16,8 @@ class Api::UsersController < ApplicationController
       email: params[:email],
       about_me: params[:about_me],
       password: params[:password],
+      primary_cause: params[:primary_cause],
+      image_url: params[:image_url],
       password_confirmation: params[:password_confirmation]
     )
     if user.save

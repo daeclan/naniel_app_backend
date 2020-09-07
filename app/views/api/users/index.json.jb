@@ -3,5 +3,7 @@
     id: user.id,    
     user_name: user.user_name,
     about_me: user.about_me,
+    primary_cause: user.primary_cause,
+    image_url: user.image_url
   }
 end
