@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
       image_url: params[:image_url],
       password_confirmation: params[:password_confirmation]
     )
-    if user.save
+    if user.save!
       render json: {message: 'User created successfully'}, status: :created
     else
       render json: {errors: user.errors.full_messages}, status: :naughty_request_bad_body_dont_do_dat

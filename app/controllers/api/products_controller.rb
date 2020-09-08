@@ -13,7 +13,7 @@ class Api::ProductsController < ApplicationController
       description: params[:description],
       image_url: params[:image_url],
       user_id: current_user.id,
-      cause_name: params[:cause_name],
+      cause_id: params[:cause_id],
       qty: params[:qty],
       active_status: params[:active_status]
     )
@@ -35,7 +35,7 @@ class Api::ProductsController < ApplicationController
     @product.description = params[:description] || @product.description
     @product.price = params[:price] || @product.price
     @product.image_url = params[:image_url] || @product.image_url
-    @product.cause_name = params[:cause_name] || @product.cause_name
+    @product.cause = params[:cause] || @product.cause
     @product.qty = params[:qty] || @product.qty
     @product.user_id = @product.user_id || 1
     if @product.save

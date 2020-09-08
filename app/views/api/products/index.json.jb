@@ -8,6 +8,5 @@
   user_id: product.user_id,
   qty: product.qty,
   cause_id: product.cause_id,
-  cause_name: product.cause.name,
   }
 end
