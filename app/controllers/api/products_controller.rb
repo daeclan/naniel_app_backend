@@ -7,6 +7,8 @@ class Api::ProductsController < ApplicationController
 
   def create
     puts current_user
+    p "*" * 88
+    puts params
     @product = Product.new(
       name: params[:name],
       price: params[:price],
@@ -15,7 +17,7 @@ class Api::ProductsController < ApplicationController
       user_id: current_user.id,
       cause_id: params[:cause_id],
       qty: params[:qty],
-      active_status: params[:active_status]
+      active_status: params[:active_status],
     )
     if @product.save
       render "show.json.jbuilder"
