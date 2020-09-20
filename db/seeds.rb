@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(user_name: "bubble_stud", email: "bubble_stud@sera.com", about_me: "From ME, but live in IL.", password: "password")
-User.create!(user_name: "naniel_is_cool", email: "naniel_is_cool@hotmail.com", about_me: "From MA, but live in ME.", password: "password")
-User.create!(user_name: "senfam4life", email: "sean@senfam.com", about_me: "From MA, but live in CA.", password: "password")
-User.create!(user_name: "lilstud27", email: "lilstud27@yahoo.com", about_me: "From ME, but live in HL.", password: "password")
+# User.create!(user_name: "bubble_stud", email: "bubble_stud@sera.com", about_me: "From ME, but live in IL.", password: "password")
+# User.create!(user_name: "naniel_is_cool", email: "naniel_is_cool@hotmail.com", about_me: "From MA, but live in ME.", password: "password")
+# User.create!(user_name: "senfam4life", email: "sean@senfam.com", about_me: "From MA, but live in CA.", password: "password")
+# User.create!(user_name: "lilstud27", email: "lilstud27@yahoo.com", about_me: "From ME, but live in HL.", password: "password")
 
 Product.create!(name: "Rare W.A.S.T.E Jacket", price: 1000, image_url: "https://i.etsystatic.com/20601890/r/il/3774ca/2298624554/il_1588xN.2298624554_42fr.jpg", user_id: 1, cause_id: 1)
 Product.create!(name: "YHWH Statue", price: 400, image_url: "https://cdn3.volusion.com/bxqxk.xvupj/v/vspfiles/photos/RYDENM153-2.jpg?v-cache=1327064021", user_id: 1, cause_id: 2)
