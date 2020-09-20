@@ -12,9 +12,9 @@
 # User.create!(user_name: "lilstud27", email: "lilstud27@yahoo.com", about_me: "From ME, but live in HL.", password: "password")
 
 
-Cause.create!(name: "Naniel", goal: "10,000", description: "I was diagnosed with Lyme Disease a few years back, and sadly things have gotten more complicated since then. Please help if you can.", status: true, user_id: 1, product_id: 1)
-Cause.create!(name: "Black Lives Matter", goal: "1,000,000", description: "A social movement advocating for non-violent civil disobedience in protest against incidents of police brutality and all racially motivated violence against black people.", status: true, user_id: 1, product_id: 2)
-Cause.create!(name: "Lyme Disease", goal: "5,000", description: "Lyme disease is a bacterial infection you get from the bite of an infected tick. At first, Lyme disease usually causes symptoms such as a rash, fever, headache, and fatigue. But if it is not treated early, the infection can spread to your joints, heart, and nervous system.", status: true, user_id: 1, product_id: 3)
+Cause.create!(name: "Naniel", goal: "10,000", description: "I was diagnosed with Lyme Disease a few years back, and sadly things have gotten more complicated since then. Please help if you can.", status: true, user_id: 1)
+Cause.create!(name: "Black Lives Matter", goal: "1,000,000", description: "A social movement advocating for non-violent civil disobedience in protest against incidents of police brutality and all racially motivated violence against black people.", status: true, user_id: 1)
+Cause.create!(name: "Lyme Disease", goal: "5,000", description: "Lyme disease is a bacterial infection you get from the bite of an infected tick. At first, Lyme disease usually causes symptoms such as a rash, fever, headache, and fatigue. But if it is not treated early, the infection can spread to your joints, heart, and nervous system.", status: true, user_id: 1)
 
 
 Product.create!(name: "Rare W.A.S.T.E Jacket", price: 1000, image_url: "https://i.etsystatic.com/20601890/r/il/3774ca/2298624554/il_1588xN.2298624554_42fr.jpg", user_id: 1, cause_id: 1)
