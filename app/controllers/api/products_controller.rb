@@ -9,6 +9,7 @@ class Api::ProductsController < ApplicationController
     puts current_user
     p "*" * 88
     puts params
+    # binding.pry
     @product = Product.new(
       name: params[:name],
       price: params[:price],
@@ -19,7 +20,7 @@ class Api::ProductsController < ApplicationController
       qty: params[:qty],
       active_status: params[:active_status],
     )
-    if @product.save
+    if @product.save!
       render "show.json.jbuilder"
     else
       render json: {errors: @product.errors.full_messages}, status: :bad_request
