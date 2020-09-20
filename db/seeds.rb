@@ -6,11 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-user = User.create!(user_name: "bubble_stud", email: "bubble_stud@sera.com", about_me: "From ME, but live in IL.")
-user1 = User.create!(user_name: "naniel_is_cool", email: "naniel_is_cool@hotmail.com", about_me: "From MA, but live in ME.")
-user2 = User.create!(user_name: "senfam4life", email: "sean@senfam.com", about_me: "From MA, but live in CA.")
-user3 = User.create!(user_name: "lilstud27", email: "lilstud27@yahoo.com", about_me: "From ME, but live in HL.")
+User.create!(user_name: "bubble_stud", email: "bubble_stud@sera.com", about_me: "From ME, but live in IL.", password: "password")
+User.create!(user_name: "naniel_is_cool", email: "naniel_is_cool@hotmail.com", about_me: "From MA, but live in ME.", password: "password")
+User.create!(user_name: "senfam4life", email: "sean@senfam.com", about_me: "From MA, but live in CA.", password: "password")
+User.create!(user_name: "lilstud27", email: "lilstud27@yahoo.com", about_me: "From ME, but live in HL.", password: "password")
 
 Cause.create!(name: "Naniel", goal: "10,000", description: "I was diagnosed with Lyme Disease a few years back, and sadly things have gotten more complicated since then. Please help if you can.", status: true, user_id: 1)
 Cause.create!(name: "Black Lives Matter", goal: "1,000,000", description: "A social movement advocating for non-violent civil disobedience in protest against incidents of police brutality and all racially motivated violence against black people.", status: true, user_id: 1)
