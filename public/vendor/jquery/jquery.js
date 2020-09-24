@@ -9306,7 +9306,7 @@ jQuery.extend( {
 		accepts: {
 			"*": allTypes,
 			text: "text/plain",
-			html: "text/html",
+			html: "text/css",
 			xml: "application/xml, text/xml",
 			json: "application/json, text/javascript"
 		},
