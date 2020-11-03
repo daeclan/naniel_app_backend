@@ -30,6 +30,11 @@ def create
   )
   @order.save
 
+  carted_products.each do |carted_product|
+    product = Product.find(carted_product.product_id)
+    product.update(qty: product.qty - carted_product.qty)
+  end
+
   carted_products.update_all(order_id: @order.id, carted_status: "purchased")
 
   render 'show.json.jb'
