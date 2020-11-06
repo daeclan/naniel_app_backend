@@ -3,4 +3,5 @@ class Product < ApplicationRecord
   has_many :orders, through: :carted_products
   belongs_to :user
   belongs_to :cause
+  validates :name, presence: true
 end

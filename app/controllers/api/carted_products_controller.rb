@@ -17,7 +17,7 @@ class Api::CartedProductsController < ApplicationController
     p params
     p "*" * 88
     @carted_product = CartedProduct.new(
-      user_id: 28, 
+      user_id: current_user.id, 
       # product: params[:product],
       product_id: params[:product_id], 
       qty: params[:qty], 

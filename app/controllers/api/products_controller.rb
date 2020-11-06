@@ -20,7 +20,7 @@ class Api::ProductsController < ApplicationController
       qty: params[:qty],
       active_status: params[:active_status],
     )
-    if @product.save!
+    if @product.save
       render "show.json.jbuilder"
     else
       render json: {errors: @product.errors.full_messages}, status: :bad_request
@@ -29,6 +29,9 @@ class Api::ProductsController < ApplicationController
 
   def show
     @product = Product.find_by(id: params[:id])
+    if current_user
+      @carted_product = CartedProduct.find_by(user_id: current_user.id, product_id: @product.id)
+    end
     render "show.json.jbuilder"
   end
 
